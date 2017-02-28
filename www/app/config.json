@@ -1,0 +1,38 @@
+{
+    "SPES-2": [{
+        "val": "Enviromental Sensor",
+        "rel": "urn:X-tsbiot:rels:hasDescription:en"
+    },
+    {
+        "val": "",
+        "rel": "house_location"
+    }],
+    "SPG-2_G": [{
+        "val": "Camera?",
+        "rel": "urn:X-tsbiot:rels:hasDescription:en"
+    },
+    {
+        "val": "",
+        "rel": "house_location"
+    }],
+    "SPG-2_F": [{
+        "val": "Home Gateway",
+        "rel": "urn:X-tsbiot:rels:hasDescription:en"
+    }],
+    "SPW-2": [{
+        "val": "Wearable Sensor",
+        "rel": "urn:X-tsbiot:rels:hasDescription:en"
+    },
+    {
+        "val": "",
+        "rel": "person"
+    }],
+    "current_cost": [{ 
+        "val": "Power Usage Monitor",
+        "rel": "urn:X-tsbiot:rels:hasDescription:en"
+    },
+    {
+        "val": "",
+        "rel": "appliance"
+    }]
+}

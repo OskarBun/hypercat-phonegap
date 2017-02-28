@@ -1,0 +1,44 @@
+.stream.quagga {
+    height: 480px;
+}
+
+.stream
+video {
+    position: absolute;
+}
+
+.stream
+canvas {
+    position: absolute;
+}
+
+.Barcode {
+    padding: 10px;
+}
+
+.Barcode
+.close {
+    position: absolute;
+    right: 5px;
+}
+
+.Barcode
+.error {
+    color: red;
+}
+
+.Barcode a {
+    width: 100%;
+    background: #B30062;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+}

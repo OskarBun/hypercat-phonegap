@@ -1,0 +1,59 @@
+.Catalogue {
+    padding: 10px;
+}
+
+.Catalogue
+pre {
+    max-width: 100%;
+    border:1px solid black;
+    background-color:#EEEEFF;
+    overflow:auto;
+    padding:10px;
+}
+
+.Catalogue
+.close {
+    position: absolute;
+    right: 5px;
+}
+
+.Catalogue
+p,
+.Catalogue
+h3 {
+    text-align: left;
+}
+
+.Catalogue
+.items
+span {
+    float: right;
+}
+
+.Catalogue
+.more {
+    padding-left: 15px;
+}
+
+.Catalogue
+.Details
+h3 {
+    text-align: center;
+}
+
+.Catalogue
+a {
+    width: 100%;
+    background: #B30062;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+}

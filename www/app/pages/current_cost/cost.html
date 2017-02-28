@@ -1,0 +1,9 @@
+<div class="CurrentCost">
+    <h1>Current Cost UID Input</h1>
+    <form>
+        <label for="id">Current Cost UID</label>
+        <input name="id" type="text" v-model="code">
+        <input type="button" @click="set" value="Enter">
+    </form>
+    <h2 v-if="error">Current Cost UID are 5 characters long.<br>Please check your code</h2>
+</div>

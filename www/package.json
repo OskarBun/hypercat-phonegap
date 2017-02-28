@@ -1,0 +1,29 @@
+{
+  "name": "item-registry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "jspm": {
+    "dependencies": {
+      "css": "github:systemjs/plugin-css@^0.1.32",
+      "fontawsome": "github:FortAwesome/Font-Awesome@^4.7.0",
+      "loaders.css": "npm:loaders.css@^0.1.2",
+      "normalize.css": "github:necolas/normalize.css@^5.0.0",
+      "quagga": "npm:quagga@^0.11.5",
+      "text": "github:systemjs/plugin-text@^0.0.9",
+      "vue": "npm:vue@^2.0.3",
+      "vue-resource": "npm:vue-resource@^1.0.3",
+      "vue-router": "npm:vue-router@^2.0.3"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}

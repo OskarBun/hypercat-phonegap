@@ -1,0 +1,12 @@
+<div class="Details">
+    <div class="details">
+        <template v-for="m in meta">
+            <h2>{{ m.rel | pretty_meta }}</h2>
+            <h3>{{ m.val }}</h3>
+        </template>
+        <template v-if="mac">
+            <h2>{{ hrefs }}</h2>
+            <h3>{{ item.href | no_slash }}</h3>
+        </template>
+    </div>
+</div>

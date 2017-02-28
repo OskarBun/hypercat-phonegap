@@ -1,0 +1,11 @@
+<div class="Barcode">
+    <div class="result" v-if="code">
+        <h1>{{message}}</h1>
+        <h1 class="error">{{error}}</h1>
+        <h3>Barcode: {{ code }}</h3>
+
+        <iot-create :format="format" :code="code" :details="details" v-if="create"></iot-create>
+        <iot-details :item="details" v-else></iot-details>
+        <a @click="update" v-if="details && !create">Update</a>
+    </div>
+</div>

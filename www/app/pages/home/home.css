@@ -1,0 +1,27 @@
+.Home-page {
+    padding: 10px;
+}
+
+a.nav {
+    width: 100%;
+    background: #B30062;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+a.nav.scan {
+    background: #DD0600;
+}
+
+a.nav.current {
+    background: #DD6600;
+}

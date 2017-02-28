@@ -1,0 +1,24 @@
+<div class="Create">
+    <div class="nuc-check" v-if="nuc_check">
+        <h2>Intel NUC</h2>
+        <input type="button" value="Home Gateway" @click="nuc('HOME')">
+        <input type="button" value="Video Hub" @click="nuc('VIDEO')">
+    </div>
+    <form @submit.prevent="post" v-else>
+        <legend>{{ title }}</legend>
+        <template v-for="item in meta">
+            <label :for="item.rel">{{ item.rel | pretty_meta }}</label>
+            <input :name="item.rel" type="text" v-model="item.val" disabled v-if="!select_map[item.rel]">
+            <select :name="item.rel" type="text" v-model="item.val" v-else :class="{'other':item.val==='other'}">
+                <option v-for="option in select_map[item.rel]" :value="option">
+                    {{ option }}
+                </option>
+                <option value="other">
+                    Other
+                </option>
+            </select>
+            <input type="text" v-model="item.other" v-if="item.val === 'other'" class="other">
+        </template>
+        <input type="submit" :value="submit">
+    </form>
+</div>

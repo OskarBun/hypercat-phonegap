@@ -1,0 +1,10 @@
+<div class="Connect">
+    <div class="connecting" v-if="trying">
+        <h1>Attempting to find Local Catalogue</h1>
+        <h2>Attempts: {{ attempts }}</h2>
+        <h2 v-if="error">{{ error }}</h2>
+    </div>
+    <div class="connected" v-else>
+        <h1>Found Local Catalogue!</h1>
+    </div>
+</div>

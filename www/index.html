@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Item Registry</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="/loaders.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="vue">
+        <div class="loader" v-cloak :class="{'loading': loading}">
+            <div class="ball-pulse">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="app">
+            <router-view></router-view>
+            <!-- <a class="backk" @click="back">Back</a> -->
+        </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+    System.import("app/main");
+    </script>
+</body>
+</html>

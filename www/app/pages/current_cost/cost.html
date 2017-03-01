@@ -1,9 +1,32 @@
 <div class="CurrentCost">
-    <h1>Current Cost UID Input</h1>
-    <form>
+    <h1>Current Cost Sync</h1>
+    <div class="websocket" v-if="ws">
+        <div class="no-items" v-if="items.length === 0">
+            <h1 class="loading-dots">Searching</h1>
+            <button @click="stop" class="stop">Stop</button>
+        </div>
+        <div class="one-item" v-if="items.length === 1">
+            <h1>Item Found!</h1>
+            <div class="items">
+                <template v-for="i in items">
+                    <h2>UID: {{ i }}</h2>
+                </template>
+            </div>
+            <button @click="add" class="add">Add</button>
+        </div>
+        <div class="more-items" v-if="items.length > 1">
+            <h1>Too Many items found. Plug ONLY ONE in then restart</h1>
+            <button @click="restart" class="restart">Restart</button>
+        </div>
+    </div>
+    <div class="websocket-start" v-else>
+        <button @click="start" class="start">Search</button>
+    </div>
+
+    <!-- <form>
         <label for="id">Current Cost UID</label>
         <input name="id" type="text" v-model="code">
         <input type="button" @click="set" value="Enter">
     </form>
-    <h2 v-if="error">Current Cost UID are 5 characters long.<br>Please check your code</h2>
+    <h2 v-if="error">Current Cost UID are 5 characters long.<br>Please check your code</h2> -->
 </div>

@@ -1,3 +1,34 @@
-.CurrentCost h2 {
-    color: #DD0600;
+.CurrentCost {
+    padding: 10px;
+}
+
+.CurrentCost
+button {
+    width: 100%;
+    background: #B30062;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.CurrentCost
+.add {
+    background: #87CE00;
+}
+
+.CurrentCost
+.restart {
+    background: #DD6600;
+}
+
+.CurrentCost
+.stop {
+    background: #DD0600;
 }

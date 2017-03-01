@@ -1,3 +1,8 @@
 platforms
 plugins
 www/jspm_packages
+
+!plugins/android.json
+!plugins/ios.json
+!plugins/fetch.json
+!plugins/browser.json

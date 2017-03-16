@@ -14,7 +14,7 @@ export default Vue.extend({
     },
     methods: {
         connect(){
-            Vue.http.get(config.cat_url).then((result) => {
+            Vue.http.get(config.url+'/cat').then((result) => {
                 this.trying = false;
                 setTimeout(() => {
                     this.$router.push("home");

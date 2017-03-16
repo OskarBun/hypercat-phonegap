@@ -39,13 +39,13 @@ export default Vue.extend({
                     }
                 );
             } else {
-                this.code = "014_a0e6f80000c1";
+                this.code = "014_a0e6f8000001";
                 // this.format = "CODE_128"
             }
         },
         get_item(){
-            this.$http.get(config.cat_url, {
-                params: { href: `/${this.code}` }
+            this.$http.get(config.url+'/cat', {
+                params: { href: this.code }
             }).then((result) => {
                 if(result.body.items.length < 1){
                     this.message = "Item not found in Local Catalogue";

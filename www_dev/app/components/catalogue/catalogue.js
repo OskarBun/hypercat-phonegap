@@ -15,7 +15,7 @@ export default Vue.extend({
     },
     methods: {
         getCata(){
-            Vue.http.get(config.cat_url).then((result) => {
+            Vue.http.get(config.url+'/cat').then((result) => {
                 this.cat = result.body;
             });
         },

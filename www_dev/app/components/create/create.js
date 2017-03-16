@@ -29,16 +29,23 @@ export default Vue.extend({
     },
     methods: {
         post(){
-            var metadata = this.meta;
-            metadata.forEach((pair)=>{
+            var metadata = this.meta.slice();
+            metadata.forEach((pair, i)=>{
                 if(pair.val === 'other') {
-                    pair.val = pair.other;
+                    pair.val = pair.other.toLowerCase();
                     delete pair.other
                 }
+                if(pair.rel === 'location_index'){
+                    var loc = metadata.find((p)=>p.rel === 'house_location')
+                    if(loc) loc.val += ' '+pair.val;
+                    metadata.splice(i, 1);
+                }
             });
-            Vue.http.put(config.cat_url+'?href=/'+this.code, {
+
+            console.log(metadata);
+            Vue.http.put(config.url+'/cat?href='+this.code, {
                 "i-object-metadata": metadata,
-                "href": "/"+this.code
+                "href": this.code
             }).then(()=>{
                 this.$router.push({
                     name: 'details', params: { code: this.code }
@@ -52,9 +59,20 @@ export default Vue.extend({
             });
         },
         set_meta(){
-            if(this.details)
-                this.meta = this.details['i-object-metadata'];
-            else {
+            if(this.details){
+                this.meta = this.details['i-object-metadata'].slice();
+                var loc = this.meta.find((p)=>p.rel === 'house_location')
+                if(loc) {
+                    var split = loc.val.split(" "),
+                        index = split.pop();
+                    loc.val = split.reduce((acc, val)=>acc+val, "")
+                    this.meta.push({
+                        "val": index,
+                        "rel": "location_index"
+                    });
+                }
+
+            } else {
                 if(this.code.length === 12 && this.nuc_value.length < 1 && this.format === 'CODE_128'){
                     this.nuc_check = true;
                 } else {

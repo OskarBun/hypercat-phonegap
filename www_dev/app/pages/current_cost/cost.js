@@ -1,6 +1,7 @@
 import './cost.css!';
 import tmpl from './cost.html!text';
 import Vue from 'vue/dist/vue.js';
+import config from 'app/config';
 
 export default Vue.extend({
     template: tmpl,
@@ -20,7 +21,7 @@ export default Vue.extend({
         },
         start(){
             if(!this.ws){
-                this.ws = new WebSocket("ws://localhost:8001")
+                this.ws = new WebSocket(config.ws_url)
                 this.ws.onopen = ()=>{
                     console.log('WEBSOCKET OPENED');
                 }

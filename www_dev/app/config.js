@@ -1,5 +1,7 @@
-exports.cat_url = "http://localhost:8001/cat";
-// exports.cat_url = "http://192.168.1.99:8001/cat";
+// exports.url = "http://localhost:8001";
+exports.url = "http://192.168.1.99:8001";
+// exports.ws_url = "ws://localhost:8001";
+exports.ws_url = "ws://192.168.1.99:8001";
 
 var meta_map = {
     'SPES-2': [{
@@ -13,6 +15,10 @@ var meta_map = {
     {
         "val": "",
         "rel": "house_location"
+    },
+    {
+        "val": "1",
+        "rel": "location_index"
     }],
     'SPG-2_G': [{
         "val": "Water Sensor",
@@ -25,6 +31,10 @@ var meta_map = {
     {
         "val": "",
         "rel": "house_location"
+    },
+    {
+        "val": "1",
+        "rel": "location_index"
     }],
     'SPG-2_F': [{
         "val": "Sphere Gateway",
@@ -37,6 +47,10 @@ var meta_map = {
     {
         "val": "",
         "rel": "house_location"
+    },
+    {
+        "val": "1",
+        "rel": "location_index"
     }],
     'SPG-2_F_ROOT': [{
         "val": "Root Sphere Gateway",
@@ -49,6 +63,10 @@ var meta_map = {
     {
         "val": "",
         "rel": "house_location"
+    },
+    {
+        "val": "1",
+        "rel": "location_index"
     }],
     'SPW-2': [{
         "val": "Wearable Sensor",
@@ -81,6 +99,10 @@ var meta_map = {
     {
         "val": "",
         "rel": "house_location"
+    },
+    {
+        "val": "1",
+        "rel": "location_index"
     }],
     "NUC_VIDEO": [{
         "val": "Motion Detector",
@@ -93,6 +115,10 @@ var meta_map = {
     {
         "val": "",
         "rel": "house_location"
+    },
+    {
+        "val": "1",
+        "rel": "location_index"
     }],
     "NUC_HOME": [{
         "val": "Home Gateway",
@@ -105,48 +131,27 @@ var meta_map = {
     {
         "val": "",
         "rel": "house_location"
+    },
+    {
+        "val": "1",
+        "rel": "location_index"
     }]
 }
 
 exports.meta_options = {
-    "user_defined_location": [
-        "basement",
-        "bathroom",
-        "bedroom",
-        "dining area",
-        "entering the home",
-        "leaving the home",
-        "garage",
-        "hallway",
-        "kitchen",
-        "living room",
-        "loft/attic",
-        "office",
-        "out of view",
-        "outside",
-        "study room",
-        "toilet",
-        "unknown"
-    ],
     "house_location": [
-        "basement",
-        "bathroom",
         "bedroom",
-        "dining area",
-        "entering the home",
-        "leaving the home",
-        "garage",
-        "hallway",
-        "kitchen",
+        "study",
         "living room",
-        "loft/attic",
-        "office",
-        "out of view",
-        "outside",
-        "study room",
+        "dining room",
+        "hall",
+        "kitchen",
         "toilet",
-        "unknown"
+        "unknown",
+        "staircase",
+        "porch"
     ],
+    "location_index": ['1','2','3','4','5'],
     "person": ['A','B','C','D','E','F','G','H','I','J'],
     "appliance": [
         "TV",

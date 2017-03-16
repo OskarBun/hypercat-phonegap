@@ -1,10 +1,4 @@
 platforms
 plugins
-www/jspm_packages
-
-!platforms/android/build/outputs/apk/android-debug.apk
-
-!plugins/android.json
-!plugins/ios.json
-!plugins/fetch.json
-!plugins/browser.json
+www_dev/jspm_packages
+www_dev/node_modules

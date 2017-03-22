@@ -39,7 +39,7 @@ export default Vue.extend({
                     }
                 );
             } else {
-                this.code = "014_a0e6f8000001";
+                this.code = "fd00::212:4b00:0:302";
                 // this.format = "CODE_128"
             }
         },

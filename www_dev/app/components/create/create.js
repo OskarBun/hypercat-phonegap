@@ -43,7 +43,7 @@ export default Vue.extend({
             });
 
             console.log(metadata);
-            Vue.http.put(config.url+'/cat?href='+this.code, {
+            Vue.http.put(config.url+'/cat?href='+encodeURIComponent(this.code), {
                 "i-object-metadata": metadata,
                 "href": this.code
             }).then(()=>{
@@ -65,7 +65,8 @@ export default Vue.extend({
                 if(loc) {
                     var split = loc.val.split(" "),
                         index = split.pop();
-                    loc.val = split.reduce((acc, val)=>acc+val, "")
+                    loc.val = split.reduce((acc, val)=>acc+" "+val, "")
+                    loc.val = loc.val.trim();
                     this.meta.push({
                         "val": index,
                         "rel": "location_index"

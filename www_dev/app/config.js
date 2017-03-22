@@ -1,6 +1,6 @@
 // exports.url = "http://localhost:8001";
-exports.url = "http://192.168.1.99:8001";
 // exports.ws_url = "ws://localhost:8001";
+exports.url = "http://192.168.1.99:8001";
 exports.ws_url = "ws://192.168.1.99:8001";
 
 var meta_map = {

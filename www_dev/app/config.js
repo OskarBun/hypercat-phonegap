@@ -1,3 +1,4 @@
+//TODO MAKE THIS IN BUILD
 // exports.url = "http://localhost:8001";
 // exports.ws_url = "ws://localhost:8001";
 exports.url = "http://192.168.1.99:8001";
@@ -183,13 +184,15 @@ exports.mac_address_map = function(mac_address){
     if(mac_address.length === 5) return meta_map['current_cost'];
 
     //Split Mac Address
-    var a = mac_address.match(/.{2}/g);
-    var x = a.slice(Math.max(a.length - 3, 1));
+    var code = mac_address.substr(mac_address.length - 6)
+    var x = code.match(/(.{2})/g);
+    console.log(x);
     if(x.length != 3) return null;
 
     //Map to device type
     var device = device_map(parseInt('0x'+x[2]));
     if(!device) return null;
+    if(device === "SPG-2_F" && x[2][1] === "2") device = "SPG-2_G"
 
     return meta_map[device];
 }

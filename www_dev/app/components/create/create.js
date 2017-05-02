@@ -32,8 +32,13 @@ export default Vue.extend({
             var metadata = this.meta.slice();
             metadata.forEach((pair, i)=>{
                 if(pair.val === 'other') {
-                    pair.val = pair.other.toLowerCase();
-                    delete pair.other
+                    if(pair.other){
+                        pair.val = pair.other.toLowerCase();
+                        delete pair.other
+                    } else {
+                        pair.val = ""
+                    }
+
                 }
                 if(pair.rel === 'location_index'){
                     var loc = metadata.find((p)=>p.rel === 'house_location')

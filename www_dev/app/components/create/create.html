@@ -8,12 +8,12 @@
         <legend>{{ title }}</legend>
         <template v-for="item in meta">
             <label :for="item.rel">{{ item.rel | pretty_meta }}</label>
-            <input :name="item.rel" type="text" v-model="item.val" disabled v-if="!select_map[item.rel]">
+            <input :name="item.rel" type="text" v-model="item.val" disabled v-if="!select_map(item)">
             <select :name="item.rel" type="text" v-model="item.val" v-else :class="{'other':item.val==='other'}">
-                <option v-for="option in select_map[item.rel]" :value="option">
+                <option v-for="option in select_map(item)" :value="option">
                     {{ option }}
                 </option>
-                <option value="other">
+                <option value="other" v-if="item.rel != 'urn:X-tsbiot:rels:hasDescription:en'">
                     Other
                 </option>
             </select>

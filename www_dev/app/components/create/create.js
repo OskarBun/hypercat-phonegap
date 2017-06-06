@@ -4,13 +4,15 @@ import Vue from 'vue/dist/vue.js';
 
 import config from 'app/config';
 
+const env_desc = ['Enviromental Sensor', 'Dry Water Sensor']
+
 export default Vue.extend({
     template: tmpl,
     props: ['code', 'details', 'format'],
     data(){
         return {
             meta: null,
-            select_map: config.meta_options,
+            _select_map: config.meta_options,
             nuc_check: false,
             nuc_value: ""
         }
@@ -28,6 +30,21 @@ export default Vue.extend({
         }
     },
     methods: {
+        select_map(item){
+            if(!this._select_map) this._select_map = config.meta_options
+
+            if(item.rel === "urn:X-tsbiot:rels:hasDescription:en" && env_desc.indexOf(item.val) != -1){
+                if(item.val === 'Dry Water Sensor'){
+                    this.meta.find(m=>m.rel === "device_type").val = "SPAQ2_P"
+                }
+                if(item.val === 'Enviromental Sensor'){
+                    this.meta.find(m=>m.rel === "device_type").val = "SPES2"
+                }
+                return env_desc
+            }
+
+            return this._select_map[item.rel]
+        },
         post(){
             var metadata = this.meta.slice();
             metadata.forEach((pair, i)=>{

@@ -22,11 +22,27 @@ var meta_map = {
         "rel": "location_index"
     }],
     'SPG-2_G': [{
-        "val": "Water Sensor",
+        "val": "Wet Water Sensor",
         "rel": "urn:X-tsbiot:rels:hasDescription:en"
     },
     {
-        "val": "SPG2_F",
+        "val": "SPAQ2",
+        "rel": "device_type"
+    },
+    {
+        "val": "",
+        "rel": "house_location"
+    },
+    {
+        "val": "1",
+        "rel": "location_index"
+    }],
+    'SPAQ2_P': [{
+        "val": "Dry Water Sensor",
+        "rel": "urn:X-tsbiot:rels:hasDescription:en"
+    },
+    {
+        "val": "SPAQ2_P",
         "rel": "device_type"
     },
     {
@@ -186,7 +202,6 @@ exports.mac_address_map = function(mac_address){
     //Split Mac Address
     var code = mac_address.substr(mac_address.length - 6)
     var x = code.match(/(.{2})/g);
-    console.log(x);
     if(x.length != 3) return null;
 
     //Map to device type

@@ -42,8 +42,12 @@ export default Vue.extend({
                 }
                 return env_desc
             }
-
-            return this._select_map[item.rel]
+            const map = this._select_map[item.rel]
+            console.log(map);
+            if(map && !(map instanceof Array)){
+                return map[this.meta.find(m=>m.rel === "device_type").val]
+            }
+            return map
         },
         post(){
             var metadata = this.meta.slice();
@@ -96,7 +100,7 @@ export default Vue.extend({
                 }
 
             } else {
-                if(this.code.length === 12 && this.nuc_value.length < 1 && this.format === 'CODE_128'){
+                if(this.nuc_value.length < 1 && this.format === 'CODE_128'){
                     this.nuc_check = true;
                 } else {
                     var code = this.code

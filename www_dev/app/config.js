@@ -1,6 +1,6 @@
 //TODO MAKE THIS IN BUILD
-// exports.url = "http://localhost:8001";
-// exports.ws_url = "ws://localhost:8001";
+// exports.url = "http://192.168.10.101:8001";
+// exports.ws_url = "ws://192.168.10.101:8001";
 exports.url = "http://192.168.1.99:8001";
 exports.ws_url = "ws://192.168.1.99:8001";
 
@@ -152,6 +152,30 @@ var meta_map = {
     {
         "val": "1",
         "rel": "location_index"
+    }],
+    "TABLET": [{
+        "val": "Tablet",
+        "rel": "urn:X-tsbiot:rels:hasDescription:en"
+    },
+    {
+        "val": "TABLET",
+        "rel": "device_type"
+    },
+    {
+        "val": "huawei",
+        "rel": "manufacturer"
+    }],
+    "ROUTER": [{
+        "val": "Router",
+        "rel": "urn:X-tsbiot:rels:hasDescription:en"
+    },
+    {
+        "val": "ROUTER",
+        "rel": "device_type"
+    },
+    {
+        "val": "dlink",
+        "rel": "manufacturer"
     }]
 }
 
@@ -180,7 +204,13 @@ exports.meta_options = {
 		"Sandwich maker",
         "Mains"
     ],
-    "device_description": []
+    "device_description": [],
+    "manufacturer": {
+        'ROUTER': [
+            'dlink',
+            'huawei'
+        ]
+    }
 }
 
 //device_id === 1 HomeGateway
@@ -197,6 +227,8 @@ var device_map = function(device_id){
 exports.mac_address_map = function(mac_address){
     if(mac_address === 'HOME') return meta_map['NUC_HOME'];
     if(mac_address === 'VIDEO') return meta_map['NUC_VIDEO'];
+    if(mac_address === 'TABLET') return meta_map['TABLET'];
+    if(mac_address === 'ROUTER') return meta_map['ROUTER'];
     if(mac_address.length === 5) return meta_map['current_cost'];
 
     //Split Mac Address

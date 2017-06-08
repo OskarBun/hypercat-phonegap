@@ -39,8 +39,8 @@ export default Vue.extend({
                     }
                 );
             } else {
-                this.code = "004_00124b0000000080";
-                // this.format = "CODE_128"
+                this.code = "00124b0000000001";
+                // this.format = "CODE_128";
             }
         },
         get_item(){

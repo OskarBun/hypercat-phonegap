@@ -1,8 +1,10 @@
 <div class="Create">
     <div class="nuc-check" v-if="nuc_check">
-        <h2>Intel NUC</h2>
+        <h2>Barcode Scanned</h2>
         <input type="button" value="Home Gateway" @click="nuc('HOME')">
         <input type="button" value="Video Hub" @click="nuc('VIDEO')">
+        <input type="button" value="Tablet" @click="nuc('TABLET')">
+        <input type="button" value="Router" @click="nuc('ROUTER')">
     </div>
     <form @submit.prevent="post" v-else>
         <legend>{{ title }}</legend>

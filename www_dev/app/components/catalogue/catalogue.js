@@ -24,7 +24,6 @@ export default Vue.extend({
             else this.showing = href;
         },
         describe(item){
-            console.log(item);
             var ret = item['i-object-metadata'].find(x=>x.rel==="urn:X-tsbiot:rels:hasDescription:en").val,
                 extra = this.mac(item) === 'mac' ? item['i-object-metadata'].find(x=>x.rel==="house_location") : item['i-object-metadata'].find(x=>x.rel==="appliance");
             if(extra){

@@ -57,3 +57,14 @@ a {
     box-sizing: border-box;
     cursor: pointer;
 }
+
+.Catalogue
+a.bad {
+    background: #DD0600;
+}
+
+.Catalogue
+h3.bad {
+    color: #DD0600;
+    text-align: center;
+}

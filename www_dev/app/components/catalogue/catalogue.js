@@ -10,7 +10,8 @@ export default Vue.extend({
     data(){
         return {
             cat: null,
-            showing: null
+            showing: null,
+            del_check: false
         }
     },
     methods: {
@@ -20,6 +21,7 @@ export default Vue.extend({
             });
         },
         show(href){
+            this.del_check = false;
             if(this.showing === href) this.showing = null;
             else this.showing = href;
         },
@@ -38,6 +40,19 @@ export default Vue.extend({
         },
         update(item){
             this.$router.push({name:'details', params: { code: item.href.replace("/", "")}});
+        },
+        del(item){
+            if(!this.del_check) this.del_check = true
+            else
+            Vue.http.delete(config.url+'/cat?href='+encodeURIComponent(item.href), {
+                "href": item.href
+            }).then(()=>{
+                this.getCata()
+                this.del_check = false
+            }, (err)=>{
+                console.error(err);
+                this.del_check = false
+            });
         }
     },
     mounted(){

@@ -13,7 +13,13 @@
                 <h3 @click="show(data.href)">{{ describe(data) }}<span><i v-if="showing === data.href" class="fa fa-chevron-up" aria-hidden="true"></i><i v-else class="fa fa-chevron-down" aria-hidden="true"></i></span></h3>
                 <div class="more" v-if="showing === data.href">
                     <iot-details :item="data" :mac="mac(data)"></iot-details>
-                    <a @click="update(data)" v-if="mac(data) === 'UID'">Update</a>
+                    <a @click="update(data)" v-if="mac(data) === 'UID' && !del_check">Update</a>
+                    <!-- TODO make a are you sure -->
+                    <a v-if="!del_check" class="bad" @click="del(data)">Delete</a>
+                    <div v-else>
+                        <h3 class="bad">Are you sure you want to delete?</h3>
+                        <a class="bad" @click="del(data)">Yes</a><a @click="del_check = false">Cancel</a>
+                    </div>
                 </div>
             </template>
         <!-- <pre class="raw">{{cat}}</pre> -->

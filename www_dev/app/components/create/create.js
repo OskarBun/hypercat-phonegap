@@ -43,7 +43,6 @@ export default Vue.extend({
                 return env_desc
             }
             const map = this._select_map[item.rel]
-            console.log(map);
             if(map && !(map instanceof Array)){
                 return map[this.meta.find(m=>m.rel === "device_type").val]
             }
@@ -68,7 +67,6 @@ export default Vue.extend({
                 }
             });
 
-            console.log(metadata);
             Vue.http.put(config.url+'/cat?href='+encodeURIComponent(this.code), {
                 "i-object-metadata": metadata,
                 "href": this.code

@@ -5,13 +5,13 @@
 // exports.ws_url = "ws://localhost:8001";
 
 //For Deployment
-// exports.url = "http://192.168.1.99:8001";
-// exports.ws_url = "ws://192.168.1.99:8001";
+exports.url = "http://192.168.1.99:8001";
+exports.ws_url = "ws://192.168.1.99:8001";
 
 
 //For SphereHouse
-exports.url = "http://10.70.18.7:8001";
-exports.ws_url = "ws://10.70.18.7:8001";
+// exports.url = "http://10.70.18.7:8001";
+// exports.ws_url = "ws://10.70.18.7:8001";
 
 var meta_map = {
     'SPES-2': [{
